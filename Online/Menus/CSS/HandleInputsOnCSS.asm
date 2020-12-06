@@ -116,7 +116,7 @@ beq SKIP_START_MATCH # Exit if start was not pressed
 li  r3, ISWINNER_NULL
 stb r3, OFST_R13_ISWINNER (r13)
 # Init CHOSESTAGE bool
-li  r3,0
+li r3,  0
 stb r3, OFST_R13_CHOSESTAGE (r13)
 
 # Check if character has been selected, if not, do nothing
@@ -138,7 +138,8 @@ bl FN_LOCK_IN_AND_SEARCH # lock in and trigger matchmaking
 b SKIP_START_MATCH
 
 HANDLE_IDLE_DIRECT:
-bl FN_LOAD_CODE_ENTRY # load text code entry
+bl FN_LOCK_IN_AND_SEARCH
+# bl FN_LOAD_CODE_ENTRY # load text code entry
 b SKIP_START_MATCH
 
 ################################################################################
