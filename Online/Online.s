@@ -268,7 +268,8 @@ lwz \reg, -0x62A0(\reg)
 ################################################################################
 .set FMTB_CMD, 0 # u8
 .set FMTB_ONLINE_MODE, FMTB_CMD + 1 # u8
-.set FMTB_OPP_CONNECT_CODE, FMTB_ONLINE_MODE + 1 # string (18) shift-jis
+.set FMTB_TEST_VERSION, FMTB_ONLINE_MODE + 1 # u8
+.set FMTB_OPP_CONNECT_CODE, FMTB_TEST_VERSION + 1 # string (18) shift-jis
 .set FMTB_SIZE, FMTB_OPP_CONNECT_CODE + 18
 
 ################################################################################

@@ -283,6 +283,10 @@ stb r3, FMTB_CMD(REG_TXB_ADDR)
 lbz r3, OFST_R13_ONLINE_MODE(r13)
 stb r3, FMTB_ONLINE_MODE(REG_TXB_ADDR)
 
+# Write version byte
+li r3, 8
+stb r3, FMTB_TEST_VERSION(REG_TXB_ADDR)
+
 # Write opp connect code, only matters for direct mode
 addi r7, REG_TXB_ADDR, FMTB_OPP_CONNECT_CODE
 load r6, 0x804a0740
